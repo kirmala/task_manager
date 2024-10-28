@@ -1,0 +1,6 @@
+*.o
+*.a
+/vendor
+.git
+.env
+.sql

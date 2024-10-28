@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"task-manager/config"
 	"task-manager/routes"
@@ -11,10 +10,7 @@ import (
 
 func main() {
 	// Load .env file
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	godotenv.Load()
 	// Initialize the database connection
 	config.InitDB()
 

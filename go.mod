@@ -1,9 +1,9 @@
 module task-manager
 
-go 1.23.2
+go 1.23
 
 require (
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/gorilla/mux v1.8.1
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.5.1
