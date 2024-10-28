@@ -1,0 +1,9 @@
+user
+register curl -X POST http://localhost:8080/register -H "Content-Type: application/json" -d "{\"username\":\"testuser\", \"email\":\"test_email@example.com\", \"password\":\"mypassword\"}"
+loggin curl -X POST http://localhost:8080/login -H "Content-Type: application/json" -d "{\"email\":\"test_email@example.com\", \"password\":\"mypassword\"}"
+
+task
+create curl -X POST http://localhost:8080/tasks -H "Content-Type: application/json" -H "Authorization: Bearer YOUR_JWT_TOKEN" -d "{\"title\": \"Test Task Title\", \"description\": \"Test description\", \"status\": \"in-progress\", \"due_date\": \"2024-12-31\"}"
+get curl -X GET http://localhost:8080/tasks -H "Authorization: Bearer YOUR_JWT_TOKEN"
+delete curl -X DELETE http://localhost:8080/tasks/1 -H "Authorization: Bearer YOUR_JWT_TOKEN"
+update curl -X PUT http://localhost:8080/tasks/1 -H "Content-Type: application/json" -H "Authorization: Bearer YOUR_JWT_TOKEN" -d "{\"title\": \"Updated Task Title\"}"
