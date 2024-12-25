@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"task-manager/config"
+	"task-manager/middlewares"
 	"task-manager/routes"
 
 	"github.com/joho/godotenv"
@@ -16,6 +17,8 @@ func main() {
 
 	r := routes.InitRoutes()
 
+	handler := middlewares.CORSHandler(r);
+
 	// Start the server
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":8080", handler)
 }

@@ -26,7 +26,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if err := config.DB.Create(&user).Error; err != nil {
-		http.Error(w, "Error creating user", http.StatusInternalServerError)
+		http.Error(w, "Your email already exists", http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(http.StatusCreated)

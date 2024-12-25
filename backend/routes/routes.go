@@ -18,5 +18,7 @@ func InitRoutes() *mux.Router {
 	router.Handle("/tasks", middlewares.JWTMiddleware(http.HandlerFunc(controllers.GetTask))).Methods("GET")
 	router.Handle("/tasks/{id}", middlewares.JWTMiddleware(http.HandlerFunc(controllers.UpdateTask))).Methods("PUT")
 	router.Handle("/tasks/{id}", middlewares.JWTMiddleware(http.HandlerFunc(controllers.DeleteTask))).Methods("DELETE")
+
+	
 	return router
 }
